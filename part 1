@@ -1,0 +1,121 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+void checkForInteger (int num);
+
+void modifyInteger (int indexNum);
+
+void addInteger (int num);
+
+void removeIndex (int num);
+
+
+int main() {
+  bool game = true;
+  int intNum, modNum, addNum, removeInt;
+int read_int;
+  //open file document
+// Create a text string, which is used to output the text file
+string myText;
+
+// Read from the text file
+ifstream MyReadFile("text.txt");
+
+// Use a while loop together with the getline() function to read the file line by line
+while (getline (MyReadFile, myText)) {
+  // Output the text from the file
+  cout << myText;
+}
+
+// Close the file
+MyReadFile.close();
+
+  
+  
+
+  //first function
+ cout << "HELLO:) \n" << endl;
+  cout << "What number are you looking for? \n " << endl;
+  cin >> intNum; 
+
+  checkForInteger(intNum);
+  }
+  
+int read_int(const string&prompt) //part one
+{
+    cin.exceptions(ios_base::failbit);
+    int num=0;
+  while (true) {
+    try{
+      cout <<prompt;
+      cin >>num;
+      return num;
+      
+    }
+      catch (ios_base::failure& ex){
+        cout <<"bad numberic string--tryagain\n";
+        cin.clear();
+        cin.ignore(numeric_limits<int>::max(), '\n');
+        
+      }
+  }
+  
+  
+    
+ 
+
+  cout << endl;
+
+  //second function
+  cout << "Modify Integer" << endl;
+  cout << "What index do you want to change?" << endl;
+  cin >> modNum;
+
+  modifyInteger(modNum);
+  cout << endl;
+
+  //third function
+  cout << "Adding Integer" << endl; 
+  cout << "What number do you want to add?" << endl; 
+  cin >> addNum;
+
+  addInteger(addNum);
+  cout << endl;
+
+  //fourth function
+  cout << "Removing Integer" << endl;
+  cout << "What index number do you want to remove?" << endl;
+  cin >> removeInt;
+
+  removeIndex(removeInt);
+  cout << endl;
+  
+
+}
+
+//check for 'num' in array, if there return index:
+void checkForInteger (int num) 
+{
+  
+  
+}
+
+//modifies value based on index number, returns new and old value:
+void modifyInteger (int indexNum) 
+{
+  
+
+}
+
+//pushback integer: 
+void addInteger (int num) 
+{
+  }
+//removes integer based on index
+void removeIndex (int num) 
+{
+  
+}
